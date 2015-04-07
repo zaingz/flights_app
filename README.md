@@ -6,6 +6,7 @@ Basic useful feature list:
  * Flight searching using several features
  * Admin dashboard for admin releated path
  * Image uploading
+ 
 ###### (rails -v: 4.2.1)
 
 To Load all the schema from seeds.rb:
@@ -21,4 +22,3 @@ And to Load all the dumped data to database us:
  * *Unauthorized copying of this file, via any medium is strictly prohibited*
  * *Proprietary and confidential*
  * *Written by Zain Bin Zafar <zaing.143@gmail.com>, April 2015*
- 
