@@ -8,7 +8,7 @@
         <div class="col-md-3 test">
         <h3 class="page-header">Alliance and Partner</h3>
           <%= f.select :alliance,  options_for_select(@alliance.collect { |all|
-                                                       [all.alliance.titleize] }.uniq!, 1), {include_blank: true},
+                                                       [all.alliance] }.uniq!, 1), {include_blank: true},
                                                         { id: 'alliance_dd', class: "form-control" } %>
       </div>
        <%= image_tag('/images/default.png', class: 'alliance_logo pull-right ', id: 'alliance logo', height:"150px", width: "auto")%>
