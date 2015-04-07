@@ -1,0 +1,34 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+ <tr>
+   <th class="bg-primary">Airlline</th>
+   <th class="bg-primary">Start</th>
+   <th class="bg-primary">Ziel</th>
+   <th class="bg-primary">Alliance</th>
+   <th class="bg-primary">Miles</th>
+ </tr>
+
+  <% @routes.each_with_index do |row,index |%>
+      <tr>
+        <th><%= row[:airline] %></th>
+        <th><%= row.start %></th>
+        <th><%= row.end %></th>
+        <th><%= @miles[index].pluck(:alliance).first %></th>
+        <th><%= @miles[index].pluck(:miles).first.to_i %></th>
+      </tr>
+  <%end%>
+</table>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-9 ">
+      <div class="pull-right">
+        <button type="button" class="btn btn-primary main_btn reset_btn">Back to home</button>
+
+      </div>
+    </div>
+  </div>
+</div>

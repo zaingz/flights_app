@@ -1,0 +1,4 @@
+<option value=""></option>
+<%  @airline.pluck(:airline).each do |airline| %>
+    <option value="<%= airline %>"><%= airline %></option>
+<% end%>

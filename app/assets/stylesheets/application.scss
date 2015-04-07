@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "search";
+@import "aircraft";
+.navbar-brand{
+  margin-top: 5px;
+  color: #2E2F30;
+  font-size: 30px;
+ // letter-spacing: 5px;
+}

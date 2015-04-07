@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+
+
+
+
+
+      <div class="list-group">
+          <% @admin.each_with_index do |row,index |%>
+            <li class="list-group-item"><h3><%= row.name %></h3><span class="text-muted">Created <%= time_ago_in_words row.created_at%> ago</span></li>
+
+          <%end%>
+
+        </div>
+
+
+
+    </div>
+
+
+  </div>
+
+</div>

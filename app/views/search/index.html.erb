@@ -1,0 +1,117 @@
+<div class="container">
+
+  <%= form_for :search, url: {action: "result"}, html: {method: "post"} do |f| %>
+
+    <div class="row">
+      <div class="col-md-12 panel panel-default">
+        <div class="panel-body">
+        <div class="col-md-3 test">
+        <h3 class="page-header">Alliance and Partner</h3>
+          <%= f.select :alliance,  options_for_select(@alliance.collect { |all|
+                                                       [all.alliance.titleize] }.uniq!, 1), {include_blank: true},
+                                                        { id: 'alliance_dd', class: "form-control" } %>
+      </div>
+       <%= image_tag('/images/default.png', class: 'alliance_logo pull-right ', id: 'alliance logo', height:"150px", width: "auto")%>
+        </div><!- panell body-->
+      </div><!- end of col-->
+    </div>
+
+
+<!-Airline->
+      <div class="row airline_box">
+  <div class="col-md-12 panel panel-default">
+    <div class="panel-body">
+      <div class="col-md-3 test">
+        <h3 class="page-header">Airline</h3>
+        <%= f.select :airline,  options_for_select(""), {include_blank: true},
+                     { id: 'airline_dd', class: "form-control" } %>
+      </div>
+      <%= image_tag('/images/default.png', class: 'airline_logo pull-right ', id: 'airline_logo', height:"150px", width: "auto")%>
+    </div><!- panell body-->
+  </div><!- end of col-->
+</div>
+
+<!-Product->
+<div class="row product_box">
+  <div class="col-md-12 panel panel-default">
+    <div class="panel-body">
+      <div class="col-md-3 test">
+        <h3 class="page-header">Product</h3>
+        <%= f.select :product,  "", {include_blank: true},
+                     { id: 'product_dd', class: "form-control" } %>
+      </div>
+      <%= image_tag('/images/product.jpg', class: 'product_logo pull-right ', id: 'airline_logo', height:"150px", width: "auto")%>
+    </div><!- panell body-->
+  </div><!- end of col-->
+</div>
+
+<!-Aircraft->
+<div class="row aircraft_box">
+  <div class="col-md-12 panel panel-default">
+    <div class="panel-body">
+      <div class="col-md-3 test">
+        <h3 class="page-header">Aircraft</h3>
+        <%= f.select :product,  "", {include_blank: true},
+                     { id: 'aircraft_dd', class: "form-control" } %>
+      </div>
+      <%= image_tag('/images/default.png', class: 'aircraft_logo pull-right ', id: 'aircraft_logo', height:"150px", width: "auto")%>
+    </div><!- panell body-->
+  </div><!- end of col-->
+</div>
+
+
+      <!-Routes Test->
+      <div class="row routes_box">
+        <div class="col-md-12 panel panel-default">
+          <div class="panel-body">
+            <div class="col-md-3 test">
+              <h3 class="page-header">Routes</h3>
+              <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-6">
+                  <%= f.select :routes1,  "", {include_blank: true},
+                               { id: 'routes1_dd', class: "form-control" } %>
+                </div>
+
+                <div class="col-md-6 pull-right">
+                  <%= f.select :routes2,  "", {include_blank: true},
+                               { id: 'routes2_dd', class: "form-control" } %>
+                </div>
+                  </div>
+              </div>
+            </div>
+            <%= image_tag('/images/routes.jpg', class: 'routes_logo pull-right ', id: 'routes_logo', height:"150px", width: "auto")%>
+          </div><!- panell body-->
+        </div><!- end of col-->
+      </div>
+
+
+      <div class="row search_box">
+        <div class="col-md-3 col-md-offset-9 ">
+          <div class="pull-right">
+          <button type="button" class="btn btn-warning main_btn reset_btn">Reset all</button>
+            <%= f.submit 'Search', class:"btn btn-success main_btn"%>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  <% end %>
+
+
+
+
+
+
+
+
+      <!-
+
+      Botiful design ends here
+
+
+
+  -->
+    </div>

@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-2 col-md-offset-10">
+
+
+      <%= link_to fa_icon('plus', text: "Add new", right: false),{:controller => "route", :action => "new"}, class: 'pull-right btn btn-success push' %>
+
+
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <tr>
+          <th class="bg-primary">Serial#</th>
+          <th class="bg-primary">Airline</th>
+          <th class="bg-primary">Start</th>
+          <th class="bg-primary">End</th>
+          <th class="bg-primary">Aircraft</th>
+          <th class="bg-primary">Origin</th>
+          <th class="bg-primary">Destination</th>
+          <th class="bg-primary">Zone</th>
+          <th class="bg-primary">Manage</th>
+
+        </tr>
+
+        <% @route.each_with_index do |row,index |%>
+            <tr>
+              <th><%= index+=1 %></th>
+              <th><%= row.airline %></th>
+              <th><%= row.start %></th>
+              <th><%= row.end %></th>
+              <th><%= row.aircraft %></th>
+              <th><%= row.origin %></th>
+              <th><%= row.destination %></th>
+              <th><%= row.zone %></th>
+
+
+              <th><%= link_to fa_icon('pencil lg'),{:controller => "route", :action => "edit", :index => index },class: "space" %>|
+                <%= link_to fa_icon('trash-o lg'),{:controller => "route", :action => "destroy", :index => index }, method: :delete, class: 'space'%></th>
+            </tr>
+        <%end%>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-2 col-md-offset-10">
+
+
+      <%= link_to fa_icon('plus', text: "Add new", right: false),{:controller => "airline", :action => "new"}, class: 'pull-right btn btn-success push' %>
+
+
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <tr>
+          <th class="bg-primary">Serial#</th>
+          <th class="bg-primary">Airline</th>
+          <th class="bg-primary">Logo</th>
+          <th class="bg-primary">Manage</th>
+
+        </tr>
+
+        <% @airline.each_with_index do |row,index |%>
+            <tr>
+              <th><%= index+=1 %></th>
+              <th><%= row.airline %></th>
+              <th><%= row.airline_logo %></th>
+              <th><%= link_to fa_icon('pencil lg'),{:controller => "airline", :action => "edit", :index => index },class: "space" %>|
+                <%= link_to fa_icon('trash-o lg'),{:controller => "airline", :action => "destroy", :index => index }, method: :delete, class: 'space'%></th>
+            </tr>
+        <%end%>
+      </table>
+    </div>
+  </div>
+
+</div>

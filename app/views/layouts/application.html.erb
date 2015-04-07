@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlightsAppFinal</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'layouts/nav_bar'%>
+<!--Alert notice for flash -->
+<%if flash[:alert]%>
+    <div class="container">
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <%=flash[:alert]%>
+        </div>
+    </div>
+<%end%>
+<!--End of alert notice for flash -->
+
+<!--Alert notice for flash -->
+<%if flash[:notice]%>
+    <div class="container">
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%=flash[:notice]%>
+      </div>
+    </div>
+<%end%>
+<!--End of alert notice for flash -->
+
+<%= yield %>
+
+</body>
+</html>
