@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
 
+  before_action :authorize
 
   def index
     @admin = Admin.all
