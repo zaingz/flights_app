@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 20150404061642) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "admins", ["name"], name: "index_admins_on_name", unique: true, using: :btree
-
   create_table "tbl_aircrafts", id: false, force: :cascade do |t|
     t.string "airline",       limit: 255, null: false
     t.string "aircraft",      limit: 255, null: false
@@ -33,11 +31,9 @@ ActiveRecord::Schema.define(version: 20150404061642) do
     t.string "aircraft_logo", limit: 255
   end
 
-  add_index "tbl_aircrafts", ["airline"], name: "tbl_aircraftsairline", using: :btree
-  add_index "tbl_aircrafts", ["airline"], name: "tbl_airlinestbl_aircrafts", using: :btree
-
-  create_table "tbl_airlines", primary_key: "airline", force: :cascade do |t|
+  create_table "tbl_airlines", id: false, force: :cascade do |t|
     t.string "airline_logo", limit: 255
+    t.string "airline",      limit: 255
   end
 
   create_table "tbl_alliances", id: false, force: :cascade do |t|
@@ -46,11 +42,10 @@ ActiveRecord::Schema.define(version: 20150404061642) do
     t.string "logo_alliance", limit: 255
   end
 
-  add_index "tbl_alliances", ["airline"], name: "tbl_airlinestbl_alliances", using: :btree
-
-  create_table "tbl_miles", primary_key: "zone", force: :cascade do |t|
+  create_table "tbl_miles", id: false, force: :cascade do |t|
     t.string "alliance", limit: 255
     t.float  "miles"
+    t.float  "zone"
   end
 
   create_table "tbl_routes", id: false, force: :cascade do |t|
@@ -63,9 +58,4 @@ ActiveRecord::Schema.define(version: 20150404061642) do
     t.float  "zone"
   end
 
-  add_index "tbl_routes", ["airline"], name: "tbl_airlinestbl_routes", using: :btree
-  add_index "tbl_routes", ["zone"], name: "tbl_milestbl_routes", using: :btree
-
-  add_foreign_key "tbl_alliances", "tbl_airlines", column: "airline", primary_key: "airline", name: "tbl_alliances_airline_tbl_airlines_airline"
-  add_foreign_key "tbl_routes", "tbl_miles", column: "zone", primary_key: "zone", name: "tbl_routes_zone_tbl_miles_zone"
 end
