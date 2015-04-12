@@ -2,7 +2,7 @@ class AirlineController < ApplicationController
   before_filter :authorize
   before_action :set_airline, only: [:edit, :update, :destroy]
 
-  require 'FileUtils'
+  require 'fileutils'
 
   def index
     @airline = Airline.all.sort

@@ -2,7 +2,7 @@ class AllianceController < ApplicationController
   before_filter :authorize
   before_action :set_alliance, only: [:edit, :update, :destroy]
 
-  require 'FileUtils'
+  require 'fileutils'
 
   def index
     @alliance = Alliance.all.sort
